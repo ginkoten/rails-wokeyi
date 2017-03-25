@@ -1,0 +1,14 @@
+<h4><%= @category? @category : "All" %></h4>
+<% @skills.each do |skill| %>
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= skill.photos.any? ? cl_image_path(skill.photos.first.path, width: 750, height: 450, crop: :fill) : ''%>);">
+    <strong>$ <%= skill.price %></strong>
+    <h2><%= skill.title %></h2>
+    <p><%= skill.brief %></p>
+    <% if skill.user.facebook_picture_url %>
+      <%= image_tag skill.user.facebook_picture_url, class: "card-user avatar" %>
+    <% else %>
+      <%= image_tag "profile.svg", class: "card-user avatar" %>
+    <% end %>
+  <%= link_to "", skill_path(skill), class: "card-link" %>
+  </div>
+<% end %>
