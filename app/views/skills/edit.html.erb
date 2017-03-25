@@ -1,0 +1,9 @@
+<% simple_form_for(@skill) do |f| %>
+  <% f.error_notification %>
+  <%f.input :title %>
+  <% f.input :brief %>
+  <% f.input :price %>
+  <% f.input :location %>
+  <% f.input :skills_category, colletion: %w(Design Marketing Writing Video Music Programming&Tech Business Lifestlye) %>
+  <% f.submit %>
+<% end %>
