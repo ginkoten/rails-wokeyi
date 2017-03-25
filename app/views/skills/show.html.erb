@@ -1,0 +1,38 @@
+<div class="skill-title">
+  <h1><% @skill.title %></h1>
+  <p>Posted time: <% @skill.created_at %></p>
+</div>
+
+<div class="skill-carousel">
+  <% render 'shared/carousel' %>
+</div>
+
+<div class="user-profile">
+  <% if @skill.user.facebook_picture_url %>
+    <%= image_tag @skill.user.facebook_picture_url %>
+    <%= @skill.user.fullname %>
+  <% else %>
+    <%= image_tag 'profile.svg' %>
+    <%= @skill.user.fullname %>
+  <% end %>
+</div>
+
+<div class="skill-info">
+  <h4>$<%= @skill.price%></h4>
+  <h4>Category</h4>
+  <%= @skill.skills_category%>
+  <h4>Location</h4>
+  <%= @skill.location%>
+
+  <% simple_form_for([@skill, @booking]) do |f| %>
+    <% f.error_notification %>
+    <% f.input :start_time, as: :date_time_picker %>
+    <% f.input :end_time, as: :date_time_picker %>
+    <% f.submit %>
+  <% end %>
+</div>
+
+<div class="skill-descriotion">
+  <h2>Description</h2>
+  <%= @skill.description%>
+</div>

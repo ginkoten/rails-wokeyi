@@ -16,20 +16,21 @@ Skill.destroy_all
       )
 end
 
-t.string   "title"
-t.integer  "brief"
-t.integer  "price"
-t.string   "location"
-t.string   "skills_category"
-t.text     "description"
-t.integer  "user_id"
+  t.string   "title"
+  t.text     "brief"
+  t.integer  "price"
+  t.string   "location"
+  t.string   "skills_category"
+  t.text     "description"
+  t.integer  "user_id"
 
   {
   # photos: "https://unsphash.it/250/150",
   title: "I will finish your wordpress site",
   price: 1000,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "Hanalulu",
-  category: "Coding",
+  skills_category: "Coding",
   description: "Set up your wordpress site in less then 24 hours"
   },
 
@@ -37,8 +38,9 @@ t.integer  "user_id"
   # photos: "https://unsphash.it/250/150",
   title: "I will sing you to sleep like a creep",
   price: 5,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "3610 Merrick St. Houston, Texas, 77025",
-  category: "Music",
+  skills_category: "Music",
   description: "sing you to sleep like a total creep"
   },
 
@@ -46,8 +48,9 @@ t.integer  "user_id"
   # photos: "https://unsphash.it/250/150",
   title: "I will design your personal logo",
   price: 30,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "New York",
-  category: "design",
+  skills_category: "design",
   description: "Design a logo for you own personal branding"
   },
 
@@ -55,8 +58,9 @@ t.integer  "user_id"
   # photos: "https://unsphash.it/250/150",
   title: "I will Dance till the break of down with you",
   price: 30000,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "Tokyo",
-  category: "Dance",
+  skills_category: "Dance",
   description: "Anywhere in Tokyo, all night long"
   },
 
@@ -64,16 +68,18 @@ t.integer  "user_id"
   # photos: "https://unsphash.it/250/150",
   title: "I will Dance code you an amazing rails app in 2 hours",
   price: 3000000,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "Juana manso 1152, ciudad autonoma de buenos aires, argentina",
-  category: "Coding",
+  skills_category: "Coding",
   description: "code you a bad ass website"
   },
      {
   # photos: "https://unsphash.it/250/150",
   title: "I will design 5 logos in 1 hours",
   price: 50000,
+  brief: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
   location: "89 Taixing Road, JingAn, Shanghai",
-  category: "Design",
+  skills_category: "Design",
   description: "I will make amazing logos. sit down and shut up"
   }
 

@@ -1,16 +1,18 @@
 class SkillsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
   #index, new, create, show, edit, update, destory
   def index
     @skills = Skill.all
-    @category = params[:search]
-    if @category
-      @skills = @skills.where(category: @category)
-    end
+    # @skills_category = params[:search]
+    # if @skills_category
+    #   @skills = @skills.where(skills_category: @skills_category)
+    # end
+    # raise
     # @coordinates = Gmaps4rails.build_markers(@skills) do |skill, marker|
     #   marker.lat skill.latitude
     #   marker.lng skill.longtitude
     #   marker.infowndow skill.name
+
   end
 
   def new
