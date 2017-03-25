@@ -1,0 +1,29 @@
+<% if @booking.skill.photos.any? %>
+   <% cl_image_tag booking.skill.photos.first.path %>
+ <% else %>
+   <% image_tag 'img-placeholder.svg' %>
+<% end %>
+
+<h3><%= @booking.skill.title %></h3>
+<%= @booking.skill.brief%>
+
+<p>From:<%= @booking.start_time.strftime("%m/%d/%Y - %I:%M%p")%></p>
+<p>To:<%= @booking.end_time.strftime("%m/%d/%Y - %I:%M%p")%></p>
+
+<% if @booking.status == "rejected" || @booking.status == "accepted" %>
+  <div class='product-status text-center <%= badge_class(@booking) %>'>
+    <p><%= booking.status %></p>
+  </div>
+<% end %>
+
+<% if @booking.status == "pending" %>
+  <%= simple_form_for([@skill, @booking]) do |f|%>
+    <%= f.input :status, :as => :hidden, :input_html => { :value => "accepted" } %>
+    <%= f.submit :accept %>
+  <% end %>
+  <%= simple_form_for([@skill, @booking]) do |f| %>
+    <%= f.input :status, :as => :hidden, :input_html => { :value => "rejected" } %>
+    <%= f.submit :reject %>
+  <% end %>
+<% end %>
+
